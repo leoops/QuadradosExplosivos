@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="QuadradosExplosivos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pei-Oq-Nre">
+                                <rect key="frame" x="0.0" y="20" width="375" height="617"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="jg5-QC-GN6" appends="YES" id="rbb-ph-pjc"/>
+                                </connections>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="F0A-AE-RtW">
+                                <rect key="frame" x="0.0" y="637" width="375" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3BL-BQ-4A2">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
+                                        <state key="normal" title="Remove All"/>
+                                        <connections>
+                                            <action selector="onRemove:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iyc-de-SBy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAA-p7-tzG">
+                                        <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
+                                        <state key="normal" title="+ Square"/>
+                                        <connections>
+                                            <action selector="onQuadrado:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mtF-nn-ZSI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pei-Oq-Nre" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6ao-5i-gcI"/>
+                            <constraint firstItem="F0A-AE-RtW" firstAttribute="top" secondItem="pei-Oq-Nre" secondAttribute="bottom" id="CIa-qb-Eon"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F0A-AE-RtW" secondAttribute="trailing" id="Kxj-Oa-7dE"/>
+                            <constraint firstItem="pei-Oq-Nre" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SaG-rv-L2A"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pei-Oq-Nre" secondAttribute="trailing" id="Uc9-rB-1Lu"/>
+                            <constraint firstItem="F0A-AE-RtW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dVp-CY-Cb2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="F0A-AE-RtW" secondAttribute="bottom" id="r4a-WO-1Ak"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tabuleiro" destination="pei-Oq-Nre" id="yzo-kD-HKP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jg5-QC-GN6">
+                    <connections>
+                        <action selector="onTouch:" destination="BYZ-38-t0r" id="kIk-Xu-8fP"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+</document>
